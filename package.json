@@ -5,9 +5,9 @@
   "keywords": [],
   "main": "src/index.js",
   "dependencies": {
-    "@tensorflow/tfjs": "^1.7.4",
-    "@tensorflow/tfjs-converter": "^1.7.4",
-    "@tensorflow/tfjs-core": "^1.7.4",
+    "@tensorflow/tfjs": "3.13.0",
+    "@tensorflow/tfjs-converter": "3.13.0",
+    "@tensorflow/tfjs-core": "3.13.0",
     "@tensorflow/tfjs-node": "^1.7.4",
     "react": "16.5.2",
     "react-dom": "16.5.2",

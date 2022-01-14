@@ -3,17 +3,18 @@ import ReactDOM from "react-dom";
 import * as tf from "@tensorflow/tfjs";
 import { loadGraphModel } from "@tensorflow/tfjs-converter";
 import "./styles.css";
+
 tf.setBackend("webgl");
 
 const threshold = 0.75;
 
 async function load_model() {
+  const url =
+    "https://raw.githubusercontent.com/codewithdpk/tfjs-model/main/models/web_model/model.json";
   // It's possible to load the model locally or from a repo
   // You can choose whatever IP and PORT you want in the "http://127.0.0.1:8080/model.json" just set it before in your https server
   //const model = await loadGraphModel("http://127.0.0.1:8080/model.json");
-  const model = await loadGraphModel(
-    "https://raw.githubusercontent.com/hugozanini/TFJS-object-detection/master/models/web_model/model.json"
-  );
+  const model = await loadGraphModel(url);
   return model;
 }
 
@@ -21,10 +22,6 @@ let classesDir = {
   1: {
     name: "door",
     id: 1,
-  },
-  2: {
-    name: "Other",
-    id: 2,
   },
 };
 
@@ -183,6 +180,8 @@ class App extends React.Component {
           width="600"
           height="500"
         />
+
+        <div id="cat" style={{ right: "0" }}></div>
       </div>
     );
   }
